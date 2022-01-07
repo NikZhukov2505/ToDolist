@@ -1,0 +1,7 @@
+.active{
+    background: greenyellow;
+}
+.card{
+    background: orange;
+    border-radius: 5px;
+}
