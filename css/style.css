@@ -1,7 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: black;
+}
 .active{
-    background: greenyellow;
+    background: rgba(147, 218, 42, 0.815);
+    border-radius: 25px;
+    margin-top: 40px;
+    height: 80px;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow: rgb(32, 158, 0) 0 0 35px;
+    -webkit-transition: width 1.5s, height 1.5s, background-color 2s, -webkit-transform 1.5s;
 }
 .card{
-    background: orange;
-    border-radius: 5px;
+    background: rgb(107, 138, 100);
+    border-radius: 25px;
+    margin-top: 40px;
+    height: 80px;
+    font-size: 30px;
+    font-size: 30px;
+    width: 700px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow: rgb(32, 158, 0) 0 0 35px;
+    -webkit-transition: width 1.5s, height 1.5s, background-color 2s, -webkit-transform 1.5s;
+}
+.output{
+    position: relative;
+}
+h1{
+    margin: 40px 0 0 0;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: yellowgreen;
+    background: black;
+    border-radius: 15px;
+    box-shadow: rgb(32, 158, 0) 0 0 25px;
+}
+#inp{
+    width: 300px;
+    height: 40px;
+    margin-top: 40px;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow: rgb(32, 158, 0) 0 0 45px;
+    background: black;
+    color: yellowgreen;
+    
+    
+}
+.styles{
+margin: 0 auto;
+width: 700px;
+height: 200px;
+display: block;
+
+}
+
+#btnAdd{
+    margin: 0 0 0 90px;
+    width: 300px;
+    height: 40px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    box-shadow: rgb(32, 158, 0) 0 0 45px;
+    background: black;
+    color: yellowgreen;
+}
+
+#btnAdd:hover{
+    background: yellowgreen;
+    color: black;
+    transition: 0.5s  0s;
+}
+
+h3{
+    text-align: center;
+    transition: ease-in-out 3s;
+    
+}
+.btns{
+    display: flex;
+    justify-content: end;
+    padding-right: 20px;
+}
+.card:hover{
+    background-color: rgb(107, 138, 100);
+    width: 100%;
+    height: 130px;
+    
+}
+.active:hover{
+    background-color: rgba(147, 218, 42, 0.815);
+    width: 100%;
+    height: 130px;
+    
+}
+.done:hover{
+    background: rgb(68, 168, 45);
+}
+.edit:hover{
+    background: rgb(150, 58, 173);
+}
+.trash:hover{
+    background-color: rgb(212, 31, 31);
 }
