@@ -1,8 +1,16 @@
 let tasks = [];
 
+// if (localStorage.getItem('todo') != null) {
+//     tasks = JSON.parse(localStorage.getItem('todo'));
+// }
+
 let imgDone, imgEdit, imgTrash;
 let output = document.getElementById('output');
 let i = 0;
+
+
+
+
 
 imgDone = `
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-square" viewBox="0 0 16 16">
@@ -37,9 +45,10 @@ const addTodo = () => {
             completed: false
         }
         tasks.push(todo)
+
         input.value = ''
     }
-    renderTodos()
+    addToLocalStorage()
 }
 
 const renderTodos = () => {
@@ -64,17 +73,16 @@ const renderTodos = () => {
         done.addEventListener('click', () => {
             i++
             element.completed = !element.completed
-            renderTodos()
+            addToLocalStorage()
         })
 
-        if (element.id == tasks.length && i == 0 && tasks.length != 1) {
+        if (element.id == tasks.length && i == 0 && tasks.length != 1 && element.completed != true) {
             card.classList = 'newCard card'
             card.animate([
                 // keyframes
                 {
                     position: 'absolute',
                     top: `${style + 100}px`,
-                    // width:
                 },
                 {
                     top: `${style + 200}px`,
@@ -106,7 +114,7 @@ const renderTodos = () => {
         trash.addEventListener('click', () => {
             i++
             tasks = tasks.filter(item => item.id != element.id)
-            renderTodos()
+            addToLocalStorage()
         })
 
 
@@ -116,7 +124,7 @@ const renderTodos = () => {
                 const newTask = prompt('New Task')
                 element.name = newTask
             }
-            renderTodos()
+            addToLocalStorage()
         })
 
     })
@@ -124,3 +132,16 @@ const renderTodos = () => {
 
 let addTask = document.getElementById('btnAdd')
 addTask.addEventListener('click', addTodo)
+
+const addToLocalStorage = () => {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+    renderTodos()
+}
+const addFromLocalStorage = () => {
+    const data = localStorage.getItem('tasks')
+    if (data != null) {
+        tasks = JSON.parse(data)
+        renderTodos()
+    }
+}
+addFromLocalStorage()

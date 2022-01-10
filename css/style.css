@@ -95,13 +95,13 @@ h3{
 }
 .card:hover{
     background-color: rgb(107, 138, 100);
-    width: 100%;
+    width: 700px;
     height: 130px;
     
 }
 .active:hover{
     background-color: rgba(147, 218, 42, 0.815);
-    width: 100%;
+    width: 700px;
     height: 130px;
     
 }
