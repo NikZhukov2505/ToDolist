@@ -61,6 +61,10 @@ margin: 0 auto;
 width: 700px;
 height: 200px;
 display: block;
+position: absolute;
+top: 20%;
+left: 50%;
+transform: translateX(-50%);
 
 }
 
@@ -113,4 +117,18 @@ h3{
 }
 .trash:hover{
     background-color: rgb(212, 31, 31);
+}
+.done{
+    background: black;
+    color: white;
+    margin-right: 5px;
+}
+.edit{
+    background: black;
+    color: white;
+}
+.trash{
+    background: black;
+    color: white;
+    margin-left: 5px;
 }

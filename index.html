@@ -6,19 +6,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDoList</title>
+
+    <script type="text/javascript">
+        (function (doc) {
+
+            var addEvent = 'addEventListener',
+                type = 'gesturestart',
+                qsa = 'querySelectorAll',
+                scales = [.8, .8],
+                meta = qsa in doc ? doc[qsa]('meta[name=viewport]') : [];
+
+            function fix() {
+                meta.content = 'width=device-width,minimum-scale=' + scales[0] + ',maximum-scale=' + scales[1];
+                doc.removeEventListener(type, fix, true);
+            }
+
+            if ((meta = meta[meta.length - 1]) && addEvent in doc) {
+                fix();
+                scales = [.9, .9];
+                doc[addEvent](type, fix, true);
+            }
+        }(document));
+    </script>
+
+
+    <link rel="stylesheet" href="./css/main.css">
+
+
     <link rel="stylesheet" href="./css/style.css">
+
+
 </head>
 
 <body>
-    <div class="styles">
-        <h1>ToDo-List</h1>
-        <div class="btn_inp">
-            <input id="inp" type="text" placeholder="Task">
-            <button id="btnAdd">Add Task</button>
-        </div>
-        <div id="output"></div>
-    </div>
+    <div class='wrapper'>
 
+        <div class="styles">
+            <h1>ToDo-List</h1>
+            <div class="btn_inp">
+                <input id="inp" type="text" placeholder="Task">
+                <button id="btnAdd">Add Task</button>
+            </div>
+            <div id="output"></div>
+        </div>
+    </div>
+    <script src="./js/bundle.js"></script>
     <script src="./js/script.js"></script>
 </body>
 
